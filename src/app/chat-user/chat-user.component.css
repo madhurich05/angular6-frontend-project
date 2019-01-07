@@ -1,3 +1,8 @@
+/*
+Author: Madhuri Chadalapaka
+Date: 01/06/2019
+Project: Doordash Front End Project
+* */
 .loginForm {
   height: 100%;
   position: absolute;
@@ -86,13 +91,16 @@
 
 .send-btn {
   color: cornflowerblue;
+  border: none;
   font-weight: bold;
   font-size: 15px;
-  float: right; }
+  padding-top: 20px;
+  padding-left: 10px;
+  background-color: #ffff; }
 
 .message-text {
   background-color: #ffff;
-  border-radius: 5px;
+  border-radius: 10px;
   word-break: break-word;
   border: none;
   /* height: 50px; */
@@ -122,6 +130,11 @@
 
 .text-right {
   background-color: #ff1940;
-  float: right; }
+  float: right;
+  margin-right: 10px;
+  color: #ffff; }
+
+.user-name-formatted {
+  color: #ff1940; }
 
 /*# sourceMappingURL=chat-user.component.css.map */

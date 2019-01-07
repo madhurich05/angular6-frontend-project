@@ -1,3 +1,10 @@
+/*
+Author: Madhuri Chadalapaka
+Date: 01/06/2019
+Project: Doordash Front End Project
+* */
+
+// Import the necessary components
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -7,13 +14,15 @@ import { timer } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import {Message} from "./message";
 
-// import { MessageService } from './message.service';
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+// Declare that this service should be created by the root application injector.
+
 @Injectable({ providedIn: 'root' })
+
+// Contains list of service methods to retrieve and save/update chat room/user/message information.
 export class ChatService {
 
   private roomsUrl = 'http://localhost:8080/api/rooms';  // URL to web api
@@ -21,7 +30,10 @@ export class ChatService {
   constructor(
     private http: HttpClient) { }
 
-  /** GET Rooms from the server */
+  /* Get the list of all availble chat rooms from the server
+   * The server must be up and running on port 8080, else it must be started using 'npm run api-server'
+   */
+
   getRooms (): Observable<any[]> {
     return this.http.get<any[]>(this.roomsUrl)
       .pipe(
@@ -30,7 +42,9 @@ export class ChatService {
       );
   }
 
-  /** GET room by id.*/
+  /* Get the chat room by id
+   * @param id - Chat room id
+   */
 
   getRoom(id: number): Observable<any> {
     const url = `${this.roomsUrl}/${id}`;
@@ -39,8 +53,10 @@ export class ChatService {
       catchError(this.handleError<any>(`getRoom id=${id}`))
     );
   }
-  /** GET Messages for the given room.*/
 
+  /* GET Messages for the given room.
+   * @param id - Chat room id
+   */
   getMessages(id: number): Observable<any> {
     const url = `${this.roomsUrl}/${id}/messages`;
     return this.http.get<any>(url).pipe(
@@ -48,7 +64,10 @@ export class ChatService {
       catchError(this.handleError<any>(`getMessages for room id=${id}`))
     );
   }
-
+    /* Send the message(s) to the chat room with all the information such as id, name, chat message and reaction if any
+     * @param id - Chat room id
+     * @param message: Message information : id, name, message and reaction
+     */
 /** POST: Send the message */
   sendMessages (id: number, message: Message): Observable<Message> {
 
@@ -58,16 +77,13 @@ export class ChatService {
       catchError(this.handleError<Message>('sendMessages'))
     );
   }
-/**Handle the error scenarios**/
+
+  /* Handle the error scenarios */
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
+      console.error(error);
       console.log(`${operation} failed: ${error.message}`);
-      // this.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);

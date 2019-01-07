@@ -1,3 +1,9 @@
+/*
+Author: Madhuri Chadalapaka
+Date: 01/06/2019
+Project: Doordash Front End Project
+* */
+
 import { Component } from '@angular/core';
 
 @Component({
