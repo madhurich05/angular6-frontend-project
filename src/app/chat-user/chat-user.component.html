@@ -1,0 +1,46 @@
+<div *ngIf="!userName">
+  <div class="loginForm">
+    <input #user [ngModel]="userName" class="username" placeholder="Type your username..."  title="username"
+           type="text" required/>
+    <button (click)="saveChatUser(user.value);" class="btn" type="submit">Join the DoorDash Chat!</button>
+  </div>
+</div>
+<div *ngIf="userName" class="flex-container">
+  <div class="leftNav">
+    <div class="user-info">
+      <span class="loginUser">{{userName}}</span>
+      <span class="status">Online for {{time}} minutes </span>
+    </div>
+
+    <div *ngFor="let room of rooms" class="col-1-4"
+         routerLink="/rooms">
+      <ul class="roomDesc">
+        <nav>
+          <a (click)="getCurrentRoom(room)">{{room.name}}</a>
+        </nav>
+      </ul>
+    </div>
+  </div>
+  <div class="rightPanel">
+      <div class="roomDetail">{{roomName}}</div>
+        <div class="roomUsers">
+          <span *ngFor="let user of users" class="col-1-4"
+               routerLink="/rooms"> {{user}}
+          </span>
+        </div>
+    <div class="chat-message">
+    <div *ngFor="let message of messages" class="col-1-4">
+      <div *ngIf="message.name !== userName">
+      <div class="chat-user">{{message.name}}</div>
+      </div>
+        <div name="message"  [className]="getClassForMessage(message.name !== userName)">{{message.message}}</div>
+     </div>
+    </div>
+    <div>
+      <input #message [ngModel]="chatMessage" required class="message-input" placeholder="Type a message..."  title="chatMessage"
+             type="text"/>
+      <button (click)="sendMessage(message.value);" class="send-btn" type="submit">Send</button>
+    </div>
+
+  </div>
+</div>

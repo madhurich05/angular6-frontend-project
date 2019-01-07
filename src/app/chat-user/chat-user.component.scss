@@ -1,0 +1,121 @@
+.loginForm {
+  height:100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+}
+
+.btn {
+  width: 250px;
+  background-color: #ff1940;
+  color: white;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.username {
+  border-color: lightgrey;
+  border-width: thin;
+  border-style: solid;
+  width: 230px;
+  height: 25px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  font-size: 13px;
+}
+.leftNav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  padding: 20px;
+  background-color: #ff1940; /* Red */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  border-radius: 2px;
+}
+.roomDesc {
+  color: #eee;
+  padding: 5px;
+}
+.user-info {
+  padding: 10px;
+}
+
+.user-info .status {
+  display: block;
+  font-size: 12px;
+  color: #ffff;
+}
+.loginUser {
+  color: #ffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.rightPanel {
+  margin-left: 200px;
+  font-size: 15px;
+  padding: 0px 20px;
+}
+.roomDetail {
+  font-size: 25px;
+  text-align: center;
+  color: #808080;
+}
+.roomUsers{
+  text-align: center;
+  color: #808080;
+}
+.chat-message {
+  width: 100%;
+  background-color: #eee;
+  display: block;
+  overflow: auto;
+  padding-bottom: 10px;
+}
+.send-btn {
+  color: cornflowerblue;
+  font-weight: bold;
+  font-size: 15px;
+  float:right;
+}
+.message-text {
+  background-color: #ffff;
+  border-radius: 5px;
+  word-break: break-word;
+  border: none;
+  /* height: 50px; */
+  max-width: 50%;
+  width: fit-content;
+  padding: 5px 5px 5px 5px;
+  margin-left: 15px;
+}
+.chat-user {
+  color: #808080;
+  font-size: 15px;
+  padding: 5px 5px 5px 5px;
+}
+.message-input{
+  border-color: lightgrey;
+  border-width: thin;
+  border-style: solid;
+  width: 86%;
+  height: 30px;
+  margin-top: 15px;
+  border-radius: 4px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  font-size: 13px;
+  margin-left: 15px;
+  background-color: #ffff;
+}
+.text-right{
+  background-color: #ff1940;
+  float: right;
+}
