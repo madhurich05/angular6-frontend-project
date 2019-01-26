@@ -1,4 +1,4 @@
-# Chat APP -- created by Madhuri Chadalapaka using Angular 6
+# Chat application -- created by Madhuri Chadalapaka using Angular 6
 
 Used [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
