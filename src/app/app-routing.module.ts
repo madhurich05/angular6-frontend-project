@@ -1,7 +1,7 @@
 /*
 Author: Madhuri Chadalapaka
 Date: 01/06/2019
-Project: Doordash Front End Project
+Project: Front End Project
 * */
 
 import { NgModule } from '@angular/core';
