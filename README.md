@@ -1,4 +1,4 @@
-# Doordash Front End Project for Door Dash Chat -- created by Madhuri Chadalapaka
+# Chat APP -- created by Madhuri Chadalapaka using Angular 6
 
 Used [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
